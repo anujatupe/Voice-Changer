@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Voice_Changer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,11 +15,84 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rc6-jM-zkl">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="microphone">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="recordAudio:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="diB-05-190"/>
+                                </connections>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="recording" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QSL-bo-tHS">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="14"/>
+                                <color key="textColor" red="0.14509803921568629" green="0.28235294117647058" blue="0.43137254901960786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DhM-MJ-gsO">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="stop">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopRecordingAudio:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="EBZ-Eg-Nf9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="Rc6-jM-zkl" secondAttribute="centerY" id="Rem-7W-doG"/>
+                            <constraint firstAttribute="centerX" secondItem="QSL-bo-tHS" secondAttribute="centerX" constant="-0.5" id="Zsq-ri-2lH"/>
+                            <constraint firstItem="QSL-bo-tHS" firstAttribute="top" secondItem="Rc6-jM-zkl" secondAttribute="bottom" constant="16" id="aeg-WP-qXn"/>
+                            <constraint firstAttribute="centerX" secondItem="Rc6-jM-zkl" secondAttribute="centerX" id="dN5-D6-T5w"/>
+                            <constraint firstItem="DhM-MJ-gsO" firstAttribute="top" secondItem="Rc6-jM-zkl" secondAttribute="bottom" constant="175" id="qbq-vm-ZfC"/>
+                            <constraint firstAttribute="centerX" secondItem="DhM-MJ-gsO" secondAttribute="centerX" id="rEN-mV-kyW"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Rc6-jM-zkl"/>
+                                <exclude reference="QSL-bo-tHS"/>
+                                <exclude reference="DhM-MJ-gsO"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="Rem-7W-doG"/>
+                                <exclude reference="dN5-D6-T5w"/>
+                                <exclude reference="Zsq-ri-2lH"/>
+                                <exclude reference="aeg-WP-qXn"/>
+                                <exclude reference="qbq-vm-ZfC"/>
+                                <exclude reference="rEN-mV-kyW"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="Rc6-jM-zkl"/>
+                                <include reference="QSL-bo-tHS"/>
+                                <include reference="DhM-MJ-gsO"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="Rem-7W-doG"/>
+                                <include reference="dN5-D6-T5w"/>
+                                <include reference="Zsq-ri-2lH"/>
+                                <include reference="aeg-WP-qXn"/>
+                                <include reference="qbq-vm-ZfC"/>
+                                <include reference="rEN-mV-kyW"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="recordButton" destination="Rc6-jM-zkl" id="p3A-xQ-iCr"/>
+                        <outlet property="recordingInProgress" destination="QSL-bo-tHS" id="HZ0-g6-c9G"/>
+                        <outlet property="stopButton" destination="DhM-MJ-gsO" id="EMa-dq-7TB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="microphone" width="100" height="100"/>
+        <image name="stop" width="50" height="50"/>
+    </resources>
 </document>
