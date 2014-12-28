@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="eHp-3L-jmW">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Record-->
@@ -93,17 +94,50 @@
             </objects>
             <point key="canvasLocation" x="1020" y="-390"/>
         </scene>
-        <!--View Controller-->
+        <!--Play Sounds View Controller-->
         <scene sceneID="hla-ZK-FzY">
             <objects>
-                <viewController id="puu-fU-YwG" sceneMemberID="viewController">
+                <viewController id="puu-fU-YwG" customClass="PlaySoundsViewController" customModule="Voice_Changer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="x8W-oy-AS2"/>
                         <viewControllerLayoutGuide type="bottom" id="KhE-jv-FzB"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="HqF-Uh-fUo">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wf8-u6-C88">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="snail">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playSlowAudio:" destination="puu-fU-YwG" eventType="touchUpInside" id="cO2-lj-Gco"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Wf8-u6-C88" firstAttribute="leading" secondItem="HqF-Uh-fUo" secondAttribute="leadingMargin" constant="30" id="KFn-JC-Oip"/>
+                            <constraint firstItem="Wf8-u6-C88" firstAttribute="top" secondItem="x8W-oy-AS2" secondAttribute="bottom" constant="50" id="a0L-GO-NH0"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Wf8-u6-C88"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="KFn-JC-Oip"/>
+                                <exclude reference="a0L-GO-NH0"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="Wf8-u6-C88"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="KFn-JC-Oip"/>
+                                <include reference="a0L-GO-NH0"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9El-W9-v0s" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -131,6 +165,7 @@
     </scenes>
     <resources>
         <image name="microphone" width="100" height="100"/>
+        <image name="snail" width="100" height="100"/>
         <image name="stop" width="50" height="50"/>
     </resources>
 </document>

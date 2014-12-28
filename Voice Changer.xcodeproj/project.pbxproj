@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A817AD11A4F8FF400BFE288 /* PlaySoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A817AD01A4F8FF400BFE288 /* PlaySoundsViewController.swift */; };
+		2A817AD31A4F9F8A00BFE288 /* movie_quote.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A817AD21A4F9F8A00BFE288 /* movie_quote.mp3 */; };
 		2AE8C9E11A4DECC50077A8DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE8C9E01A4DECC50077A8DE /* AppDelegate.swift */; };
 		2AE8C9E31A4DECC50077A8DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE8C9E21A4DECC50077A8DE /* ViewController.swift */; };
 		2AE8C9E61A4DECC50077A8DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AE8C9E41A4DECC50077A8DE /* Main.storyboard */; };
@@ -26,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A817AD01A4F8FF400BFE288 /* PlaySoundsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaySoundsViewController.swift; sourceTree = "<group>"; };
+		2A817AD21A4F9F8A00BFE288 /* movie_quote.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = movie_quote.mp3; path = ../movie_quote.mp3; sourceTree = "<group>"; };
 		2AE8C9DB1A4DECC50077A8DE /* Voice Changer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Voice Changer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AE8C9DF1A4DECC50077A8DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2AE8C9E01A4DECC50077A8DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +87,7 @@
 				2AE8C9E71A4DECC50077A8DE /* Images.xcassets */,
 				2AE8C9E91A4DECC50077A8DE /* LaunchScreen.xib */,
 				2AE8C9DE1A4DECC50077A8DE /* Supporting Files */,
+				2A817AD01A4F8FF400BFE288 /* PlaySoundsViewController.swift */,
 			);
 			path = "Voice Changer";
 			sourceTree = "<group>";
@@ -90,6 +95,7 @@
 		2AE8C9DE1A4DECC50077A8DE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2A817AD21A4F9F8A00BFE288 /* movie_quote.mp3 */,
 				2AE8C9DF1A4DECC50077A8DE /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -194,6 +200,7 @@
 			files = (
 				2AE8C9E61A4DECC50077A8DE /* Main.storyboard in Resources */,
 				2AE8C9EB1A4DECC50077A8DE /* LaunchScreen.xib in Resources */,
+				2A817AD31A4F9F8A00BFE288 /* movie_quote.mp3 in Resources */,
 				2AE8C9E81A4DECC50077A8DE /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -213,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2AE8C9E31A4DECC50077A8DE /* ViewController.swift in Sources */,
+				2A817AD11A4F8FF400BFE288 /* PlaySoundsViewController.swift in Sources */,
 				2AE8C9E11A4DECC50077A8DE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -407,6 +415,7 @@
 				2AE8C9FC1A4DECC50077A8DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2AE8C9FD1A4DECC50077A8DE /* Build configuration list for PBXNativeTarget "Voice ChangerTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +424,7 @@
 				2AE8C9FF1A4DECC50077A8DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
