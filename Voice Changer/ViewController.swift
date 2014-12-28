@@ -29,13 +29,15 @@ class ViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         // Hide the stop button
         stopButton.hidden = true
+        // Show the record button
+        recordButton.enabled = true
     }
 
 
     @IBAction func stopRecordingAudio(sender: UIButton) {
         recordingInProgress.hidden = true
         //Enable the record button
-        recordButton.enabled = true
+        //recordButton.enabled = true
     }
     @IBAction func recordAudio(sender: UIButton) {
         //Disable the record button
