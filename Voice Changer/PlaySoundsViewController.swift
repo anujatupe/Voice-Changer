@@ -31,12 +31,24 @@ class PlaySoundsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func playSlowAudio(sender: UIButton) {
+    func stopAudioSetRateAndCurrentTimeStartAudio(rate: Float, currentTime: NSTimeInterval) {
         audioPlayer.stop()
-        audioPlayer.rate = 0.5
+        audioPlayer.rate = rate
+        audioPlayer.currentTime = currentTime
         audioPlayer.play()
     }
     
+    @IBAction func playSlowAudio(sender: UIButton) {
+        stopAudioSetRateAndCurrentTimeStartAudio(0.5, currentTime: 0.0)
+    }
+    
+    @IBAction func playFastAudio(sender: UIButton) {
+        stopAudioSetRateAndCurrentTimeStartAudio(1.5, currentTime: 0.0)
+    }
+    
+    @IBAction func stopAudio(sender: UIButton) {
+        audioPlayer.stop()
+    }
     /*
     // MARK: - Navigation
 
