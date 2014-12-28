@@ -8,7 +8,7 @@
         <!--Record-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Voice_Changer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="RecordSoundsViewController" customModule="Voice_Changer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -39,7 +39,6 @@
                                 </state>
                                 <connections>
                                     <action selector="stopRecordingAudio:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="EBZ-Eg-Nf9"/>
-                                    <segue destination="puu-fU-YwG" kind="show" id="MFw-as-s98"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -88,6 +87,7 @@
                         <outlet property="recordButton" destination="Rc6-jM-zkl" id="p3A-xQ-iCr"/>
                         <outlet property="recordingInProgress" destination="QSL-bo-tHS" id="HZ0-g6-c9G"/>
                         <outlet property="stopButton" destination="DhM-MJ-gsO" id="EMa-dq-7TB"/>
+                        <segue destination="puu-fU-YwG" kind="show" identifier="stopRecordingSegway" id="Fsa-hP-IGQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -132,6 +132,15 @@
                                     <action selector="stopAudio:" destination="puu-fU-YwG" eventType="touchUpInside" id="bES-oQ-HBK"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQn-gu-k8V">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="chipmunk">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playChipmunkAudio:" destination="puu-fU-YwG" eventType="touchUpInside" id="Hxt-19-JIS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.68388953819999998" green="0.81329150679999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -141,18 +150,23 @@
                             <constraint firstItem="Wf8-u6-C88" firstAttribute="leading" secondItem="HqF-Uh-fUo" secondAttribute="leadingMargin" constant="30" id="KFn-JC-Oip"/>
                             <constraint firstItem="Wf8-u6-C88" firstAttribute="top" secondItem="x8W-oy-AS2" secondAttribute="bottom" constant="50" id="a0L-GO-NH0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="v9Z-gS-ZCF" secondAttribute="trailing" constant="30" id="dDf-Ih-ATG"/>
+                            <constraint firstItem="QQn-gu-k8V" firstAttribute="top" secondItem="Wf8-u6-C88" secondAttribute="bottom" constant="114" id="gH5-pD-9Sn"/>
+                            <constraint firstItem="QQn-gu-k8V" firstAttribute="leading" secondItem="HqF-Uh-fUo" secondAttribute="leadingMargin" constant="30" id="yhD-QQ-WJk"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="Wf8-u6-C88"/>
                                 <exclude reference="v9Z-gS-ZCF"/>
                                 <exclude reference="fW5-zd-2aZ"/>
+                                <exclude reference="QQn-gu-k8V"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="KFn-JC-Oip"/>
                                 <exclude reference="a0L-GO-NH0"/>
                                 <exclude reference="EBk-e4-Ilw"/>
                                 <exclude reference="dDf-Ih-ATG"/>
+                                <exclude reference="gH5-pD-9Sn"/>
+                                <exclude reference="yhD-QQ-WJk"/>
                                 <exclude reference="DAZ-Cy-pyg"/>
                                 <exclude reference="DaI-ax-n5y"/>
                             </mask>
@@ -162,12 +176,15 @@
                                 <include reference="Wf8-u6-C88"/>
                                 <include reference="v9Z-gS-ZCF"/>
                                 <include reference="fW5-zd-2aZ"/>
+                                <include reference="QQn-gu-k8V"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="KFn-JC-Oip"/>
                                 <include reference="a0L-GO-NH0"/>
                                 <include reference="EBk-e4-Ilw"/>
                                 <include reference="dDf-Ih-ATG"/>
+                                <include reference="gH5-pD-9Sn"/>
+                                <include reference="yhD-QQ-WJk"/>
                                 <include reference="DAZ-Cy-pyg"/>
                                 <include reference="DaI-ax-n5y"/>
                             </mask>
@@ -198,6 +215,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chipmunk" width="100" height="100"/>
         <image name="microphone" width="100" height="100"/>
         <image name="rabbit" width="100" height="100"/>
         <image name="snail" width="100" height="100"/>
